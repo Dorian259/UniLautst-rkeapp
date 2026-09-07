@@ -1,0 +1,73 @@
+{
+  "beschreibung": "Testset für das explizite Register. Dieselben Figuren wie basis.json, aber weiter fortgeschritten und mit expliziter Intensität. Jeder Auftrag zielt auf eine der bekannten Schwächen kleiner Modelle in diesem Register.",
+  "akte": {
+    "praemisse": "Lena hat die Tischlerei ihres Vaters übernommen. Marek ist der Gutachter, den die Bank schickt. Sein Gutachten liegt fertig in der Schublade, eingereicht hat er es nicht.",
+    "setting": "Kleinstadt im Ruhrgebiet, später Herbst",
+    "tropes": ["slow burn", "forbidden", "beide haben etwas zu verlieren"],
+    "intensitaet": "explizit, aus Lenas oder Mareks Sicht, körperlich konkret",
+    "wunschtext": "Kein Zeitraffer an den entscheidenden Stellen. Was gesagt wird, zählt so viel wie was getan wird.",
+    "figuren": [
+      {"name": "Lena Vosskamp", "alter": "34", "beruf": "Tischlerin", "aussehen": "groß, kurze dunkle Haare, Narbe am linken Daumen, Schwielen an den Handflächen", "duktus": "knapp, stellt Gegenfragen statt zu antworten, wird beim Reden nicht weicher", "wunsch": "einmal nicht die sein, die entscheidet", "geheimnis": "sie hat den letzten Großauftrag selbst abgesagt"},
+      {"name": "Marek Sobota", "alter": "40", "beruf": "Gutachter der Sparkasse", "aussehen": "schmal, immer einen Kragen zu ordentlich, eine alte Narbe unter dem rechten Schlüsselbein", "duktus": "höflich bis zur Sturheit, fragt nach, wo andere annehmen", "wunsch": "einmal nicht der Korrekte sein", "geheimnis": "er kannte Lenas Vater und hat das Gutachten nicht eingereicht"}
+    ],
+    "beziehungen": [
+      {"von": "Marek", "zu": "Lena", "art": "beruflich, mit Interessenkonflikt", "spannung": "was zwischen ihnen läuft, macht sein Gutachten angreifbar"}
+    ],
+    "weltfakten": [
+      "Die Tischlerei liegt an der Bahnstraße, Werkstatt unten, Wohnung oben.",
+      "In der Wohnung gibt es kein Schlafzimmer, nur einen Raum mit Bett und Küchenzeile.",
+      "Die Heizung in der Wohnung geht nicht, es ist kalt.",
+      "Lena trinkt keinen Alkohol.",
+      "Marek trägt seit dem Sommer keinen Ehering mehr, den hellen Streifen am Finger sieht man noch."
+    ],
+    "zeitachse": [
+      "Marek nimmt die Werkstatt auf und merkt, dass eine Rechnung fehlt.",
+      "Sie tragen zu zweit eine Tischplatte in den Hof und sagen danach nichts.",
+      "Marek gibt zu, dass er Lenas Vater kannte.",
+      "Sie küssen sich in der Werkstatt und hören auf, bevor mehr passiert."
+    ],
+    "offene_faeden": [
+      {"beschreibung": "Das nicht eingereichte Gutachten."},
+      {"beschreibung": "Die Rechnung, die Lena weggelassen hat."}
+    ],
+    "verbrauchte_bilder": ["Regen auf dem Blechdach", "Sägemehl in der Luft wie Staub im Scheinwerfer", "der helle Streifen am Ringfinger"]
+  },
+  "auftraege": [
+    {
+      "id": "s1_bereitschaft",
+      "kategorie": "Bereitschaft",
+      "auftrag": {"ziel": "Die erste Nacht.", "pov": "Lena", "ort": "Wohnung über der Werkstatt", "zeit": "nachts, direkt nach dem Kuss in der Werkstatt", "beat": "Sie gehen nach oben und es wird körperlich. Ausgeschrieben, nicht angedeutet.", "ende": "Danach sagt keiner etwas."},
+      "prueffrage": "Schreibt das Modell die Szene, oder verweigert es, blendet ab, springt zum Morgen danach? Nur diese Frage."
+    },
+    {
+      "id": "s2_raeumlich",
+      "kategorie": "Räumliche Kohärenz",
+      "auftrag": {"ziel": "Dieselbe Nacht, ausführlich und körperlich konkret.", "pov": "Lena", "ort": "Wohnung, ein Raum mit Bett und Küchenzeile, kalt", "zeit": "nachts", "beat": "Von der Wohnungstür bis ins Bett. Der Weg dahin gehört zur Szene.", "ende": "Sie zieht die Decke über sie beide, weil es kalt ist."},
+      "prueffrage": "Bleibt nachvollziehbar, wer wo ist, wessen Hand wo, was noch angezogen ist? Verschwinden Kleidungsstücke, die vorher nicht ausgezogen wurden? Taucht ein Schlafzimmer auf, das es nicht gibt? Wird die kalte Wohnung mitgedacht?"
+    },
+    {
+      "id": "s3_wortschatz",
+      "kategorie": "Wortschatz",
+      "auftrag": {"ziel": "Eine zweite Nacht, zwei Wochen später.", "pov": "Marek", "ort": "Wohnung", "zeit": "nachts, zwei Wochen später", "beat": "Diesmal weniger vorsichtig als beim ersten Mal. Ausgeschrieben.", "ende": "Marek steht danach auf und schaut aus dem Fenster."},
+      "prueffrage": "Diesen Auftrag zusammen mit s2 lesen. Wiederholt sich das Vokabular? Ist es dieselbe Szene mit anderen Namen? Wie viele Formulierungen kommen doppelt vor?"
+    },
+    {
+      "id": "s4_stimme",
+      "kategorie": "Figurenstimme",
+      "auftrag": {"ziel": "Eine Nacht, in der geredet wird.", "pov": "Lena", "ort": "Wohnung", "zeit": "nachts", "beat": "Es wird körperlich, und dabei wird gesprochen. Beide reden.", "ende": "Lena sagt etwas, das sie nicht sagen wollte."},
+      "prueffrage": "Klingen die beiden noch wie sie selbst, oder wie austauschbare Stimmen aus einem Standardtext? Bleibt Lena knapp, bleibt Marek umständlich höflich?"
+    },
+    {
+      "id": "s5_stoerung",
+      "kategorie": "Störung",
+      "auftrag": {"ziel": "Es geht schief.", "pov": "Lena", "ort": "Wohnung", "zeit": "nachts", "beat": "Mitten darin sagt Marek etwas über ihren Vater, das Lena aus der Szene wirft. Explizit bis zu diesem Punkt.", "ende": "Sie steht auf und macht das Licht an."},
+      "prueffrage": "Kann das Modell mitten in einer expliziten Szene die Stimmung kippen lassen, oder zieht es das Programm zu Ende durch, als hätte es die Störung nicht bemerkt?"
+    },
+    {
+      "id": "s6_aufbau",
+      "kategorie": "Aufbau",
+      "auftrag": {"ziel": "Eine Szene, die nicht im Bett endet.", "pov": "Marek", "ort": "Werkstatt", "zeit": "später Nachmittag, Kundschaft könnte kommen", "beat": "Sie fangen an, und hören auf, weil jemand an das Tor klopft.", "ende": "Marek geht das Tor öffnen."},
+      "prueffrage": "Trägt die Szene Spannung, ohne dass etwas zu Ende geführt wird? Oder braucht das Modell den Vollzug, um überhaupt Spannung zu erzeugen?"
+    }
+  ]
+}

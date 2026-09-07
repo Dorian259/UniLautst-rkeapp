@@ -98,6 +98,16 @@ def lauf(
     for auftrag in auftraege:
         aid = auftrag["id"]
         ergebnisse[aid] = {}
+        # Ein Auftrag darf die Intensitaet der Akte ueberschreiben. Sonst liest
+        # das Modell "nicht explizit" in der Akte und einen expliziten Auftrag,
+        # und der Test misst den Widerspruch statt der Faehigkeit.
+        if auftrag.get("intensitaet"):
+            akte_lokal = dict(akte)
+            akte_lokal["vorgaben"] = dict(akte["vorgaben"])
+            akte_lokal["vorgaben"]["intensitaet"] = auftrag["intensitaet"]
+            auftrag_akte_text = bible.render_kompakt(akte_lokal)
+        else:
+            auftrag_akte_text = akte_text
         gemischt = modelle[:]
         random.shuffle(gemischt)
         zuordnung[aid] = {
@@ -107,7 +117,7 @@ def lauf(
             log(f"  {aid} / {buchstabe} ({modell})")
             rm = Rollenmodell(modell=modell, base_url=cfg.base_url, api_key_env=cfg.api_key_env)
             user = prompts.user_schreiber(
-                akte_text, "", auftrag["auftrag"], cfg.zielwoerter
+                auftrag_akte_text, "", auftrag["auftrag"], cfg.zielwoerter
             )
             beginn = time.time()
             try:

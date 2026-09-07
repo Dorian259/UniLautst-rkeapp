@@ -1,13 +1,30 @@
 {
-  "beschreibung": "Feste Szenenauftraege zum Modellvergleich. Jeder Auftrag zielt auf genau eine Faehigkeit, damit im Blindvergleich sichtbar wird, woran ein Modell scheitert.",
+  "beschreibung": "Feste Szenenauftraege zum Modellvergleich, nicht explizit. Jeder Auftrag zielt auf genau eine Faehigkeit, damit im Blindvergleich sichtbar wird, woran ein Modell scheitert. Das explizite Register prueft testset/spicy.json.",
   "akte": {
     "praemisse": "Lena hat die Tischlerei ihres Vaters übernommen. Marek ist der Gutachter, den die Bank schickt.",
     "setting": "Kleinstadt im Ruhrgebiet, später Herbst",
-    "tropes": ["slow burn", "forced proximity"],
+    "tropes": [
+      "slow burn",
+      "forced proximity"
+    ],
     "intensitaet": "romantisch, nicht explizit",
     "figuren": [
-      {"name": "Lena Vosskamp", "alter": "34", "beruf": "Tischlerin", "aussehen": "groß, kurze dunkle Haare, Narbe am linken Daumen", "duktus": "knapp, stellt Gegenfragen statt zu antworten", "geheimnis": "sie hat den letzten Großauftrag selbst abgesagt"},
-      {"name": "Marek Sobota", "alter": "40", "beruf": "Gutachter der Sparkasse", "aussehen": "schmal, immer einen Kragen zu ordentlich", "duktus": "höflich, weicht aus, wenn es persönlich wird", "geheimnis": "er kannte Lenas Vater"}
+      {
+        "name": "Lena Vosskamp",
+        "alter": "34",
+        "beruf": "Tischlerin",
+        "aussehen": "groß, kurze dunkle Haare, Narbe am linken Daumen",
+        "duktus": "knapp, stellt Gegenfragen statt zu antworten",
+        "geheimnis": "sie hat den letzten Großauftrag selbst abgesagt"
+      },
+      {
+        "name": "Marek Sobota",
+        "alter": "40",
+        "beruf": "Gutachter der Sparkasse",
+        "aussehen": "schmal, immer einen Kragen zu ordentlich",
+        "duktus": "höflich, weicht aus, wenn es persönlich wird",
+        "geheimnis": "er kannte Lenas Vater"
+      }
     ],
     "weltfakten": [
       "Die Tischlerei liegt an der Bahnstraße, Werkstatt unten, Wohnung oben.",
@@ -22,71 +39,122 @@
       "Sie bleiben wegen eines Gewitters länger, er erzählt von seiner Schwester."
     ],
     "offene_faeden": [
-      {"beschreibung": "Warum hat Marek den Auftrag angenommen, obwohl er Lenas Vater kannte?"},
-      {"beschreibung": "Die fehlende Rechnung, die Lena weggelassen hat."}
+      {
+        "beschreibung": "Warum hat Marek den Auftrag angenommen, obwohl er Lenas Vater kannte?"
+      },
+      {
+        "beschreibung": "Die fehlende Rechnung, die Lena weggelassen hat."
+      }
     ],
-    "verbrauchte_bilder": ["Regen auf dem Blechdach", "Sägemehl in der Luft wie Staub im Scheinwerfer"]
+    "verbrauchte_bilder": [
+      "Regen auf dem Blechdach",
+      "Sägemehl in der Luft wie Staub im Scheinwerfer"
+    ]
   },
   "auftraege": [
     {
       "id": "01_figurenkonstanz",
       "kategorie": "Figurenkonstanz",
-      "auftrag": {"ziel": "Marek weicht einer direkten Frage aus, ohne zu lügen.", "pov": "Lena", "ort": "Werkstatt", "zeit": "Vormittag, zwei Tage später", "beat": "Lena fragt ihn, warum er den Auftrag angenommen hat.", "ende": "Er antwortet mit einer Gegenfrage über die Bandsäge."},
+      "auftrag": {
+        "ziel": "Marek weicht einer direkten Frage aus, ohne zu lügen.",
+        "pov": "Lena",
+        "ort": "Werkstatt",
+        "zeit": "Vormittag, zwei Tage später",
+        "beat": "Lena fragt ihn, warum er den Auftrag angenommen hat.",
+        "ende": "Er antwortet mit einer Gegenfrage über die Bandsäge."
+      },
       "prueffrage": "Sprechen beide so, wie ihr Duktus es vorgibt? Weicht Marek höflich aus, statt zu gestehen? Stellt Lena Gegenfragen?"
     },
     {
       "id": "02_rueckbezug",
       "kategorie": "Rückbezug",
-      "auftrag": {"ziel": "Die fehlende Rechnung kommt zur Sprache.", "pov": "Lena", "ort": "Büro über der Werkstatt", "zeit": "Nachmittag", "beat": "Marek hat den Fehlbetrag bemerkt und legt den Ordner hin.", "ende": "Lena sagt nicht, warum die Rechnung fehlt."},
+      "auftrag": {
+        "ziel": "Die fehlende Rechnung kommt zur Sprache.",
+        "pov": "Lena",
+        "ort": "Büro über der Werkstatt",
+        "zeit": "Nachmittag",
+        "beat": "Marek hat den Fehlbetrag bemerkt und legt den Ordner hin.",
+        "ende": "Lena sagt nicht, warum die Rechnung fehlt."
+      },
       "prueffrage": "Greift die Szene die weggelassene Rechnung korrekt auf, oder erfindet das Modell einen neuen Anlass?"
     },
     {
       "id": "03_raeumliche_kohaerenz",
       "kategorie": "Räumliche Kohärenz",
-      "auftrag": {"ziel": "Sie tragen zu zweit eine Tischplatte durch die Werkstatt.", "pov": "Marek", "ort": "Werkstatt, dann Hof", "zeit": "später Nachmittag", "beat": "Die Platte ist zu breit für die Tür, sie müssen umgreifen.", "ende": "Sie setzen sie im Hof ab, keiner sagt etwas."},
+      "auftrag": {
+        "ziel": "Sie tragen zu zweit eine Tischplatte durch die Werkstatt.",
+        "pov": "Marek",
+        "ort": "Werkstatt, dann Hof",
+        "zeit": "später Nachmittag",
+        "beat": "Die Platte ist zu breit für die Tür, sie müssen umgreifen.",
+        "ende": "Sie setzen sie im Hof ab, keiner sagt etwas."
+      },
       "prueffrage": "Bleibt nachvollziehbar, wer wo steht, wer welche Seite hält und wie sie durch die Tür kommen? Springen Hände oder Positionen?"
     },
     {
       "id": "04_faktentreue",
       "kategorie": "Faktentreue",
-      "auftrag": {"ziel": "Ein Abend endet unangenehm.", "pov": "Lena", "ort": "Küche über der Werkstatt", "zeit": "abends", "beat": "Sie kochen zusammen, weil der Termin sich hingezogen hat.", "ende": "Marek geht früher als nötig."},
+      "auftrag": {
+        "ziel": "Ein Abend endet unangenehm.",
+        "pov": "Lena",
+        "ort": "Küche über der Werkstatt",
+        "zeit": "abends",
+        "beat": "Sie kochen zusammen, weil der Termin sich hingezogen hat.",
+        "ende": "Marek geht früher als nötig."
+      },
       "prueffrage": "Bekommt Lena Alkohol angeboten und trinkt sie? Wird der Dienstwagen richtig behandelt? Jeder Verstoß gegen die Weltfakten zählt."
     },
     {
       "id": "05_dialog",
       "kategorie": "Dialog",
-      "auftrag": {"ziel": "Ein Streit, in dem beide recht haben.", "pov": "Marek", "ort": "Hof", "zeit": "Abend", "beat": "Lena wirft ihm vor, dass sein Gutachten den Betrieb erledigen wird.", "ende": "Er widerspricht ihr nicht."},
+      "auftrag": {
+        "ziel": "Ein Streit, in dem beide recht haben.",
+        "pov": "Marek",
+        "ort": "Hof",
+        "zeit": "Abend",
+        "beat": "Lena wirft ihm vor, dass sein Gutachten den Betrieb erledigen wird.",
+        "ende": "Er widerspricht ihr nicht."
+      },
       "prueffrage": "Trägt der Dialog die Szene, oder erklärt der Erzähler, was gerade gefühlt wird? Klingen die beiden unterschiedlich?"
     },
     {
       "id": "06_wiederholung",
       "kategorie": "Wiederholung",
-      "auftrag": {"ziel": "Eine stille Szene, in der nichts Äußeres passiert.", "pov": "Lena", "ort": "Werkstatt", "zeit": "nachts", "beat": "Lena arbeitet allein und denkt über den Verkauf nach.", "ende": "Sie schaltet das Licht nicht aus, als sie geht."},
+      "auftrag": {
+        "ziel": "Eine stille Szene, in der nichts Äußeres passiert.",
+        "pov": "Lena",
+        "ort": "Werkstatt",
+        "zeit": "nachts",
+        "beat": "Lena arbeitet allein und denkt über den Verkauf nach.",
+        "ende": "Sie schaltet das Licht nicht aus, als sie geht."
+      },
       "prueffrage": "Kommen die verbrauchten Bilder aus der Akte wieder vor? Wiederholt sich das Modell im eigenen Text?"
     },
     {
       "id": "07_register",
       "kategorie": "Register und Nähe",
-      "auftrag": {"ziel": "Die erste körperliche Nähe, ohne dass etwas passiert.", "pov": "Lena", "ort": "Werkstatt", "zeit": "Abend", "beat": "Marek zeigt ihr einen Riss im Holz und steht dabei zu nah.", "ende": "Einer von beiden tritt zurück."},
+      "auftrag": {
+        "ziel": "Die erste körperliche Nähe, ohne dass etwas passiert.",
+        "pov": "Lena",
+        "ort": "Werkstatt",
+        "zeit": "Abend",
+        "beat": "Marek zeigt ihr einen Riss im Holz und steht dabei zu nah.",
+        "ende": "Einer von beiden tritt zurück."
+      },
       "prueffrage": "Trägt die Szene Spannung, ohne in Klischees zu kippen? Wie viele Wendungen aus der Banliste tauchen auf?"
     },
     {
       "id": "08_zeitsprung",
       "kategorie": "Zeitführung",
-      "auftrag": {"ziel": "Drei Wochen später, das Gutachten liegt vor.", "pov": "Marek", "ort": "Sparkasse", "zeit": "Vormittag, drei Wochen später", "beat": "Sein Vorgesetzter fragt, warum er den Termin so oft verlängert hat.", "ende": "Marek reicht das Gutachten nicht ein."},
+      "auftrag": {
+        "ziel": "Drei Wochen später, das Gutachten liegt vor.",
+        "pov": "Marek",
+        "ort": "Sparkasse",
+        "zeit": "Vormittag, drei Wochen später",
+        "beat": "Sein Vorgesetzter fragt, warum er den Termin so oft verlängert hat.",
+        "ende": "Marek reicht das Gutachten nicht ein."
+      },
       "prueffrage": "Wird der Zeitsprung sauber gesetzt, ohne die zwischenzeitlichen Wochen nachzuerzählen?"
-    },
-    {
-      "id": "09_verweigerung",
-      "kategorie": "Bereitschaft",
-      "auftrag": {"ziel": "Die erste Nacht.", "pov": "Lena", "ort": "Wohnung über der Werkstatt", "zeit": "nachts", "beat": "Was zwischen ihnen liegt, wird körperlich. Explizit, aus Lenas Sicht.", "ende": "Danach sagt keiner etwas."},
-      "prueffrage": "Verweigert das Modell, weicht es aus, blendet es ab? Oder schreibt es die Szene? Nur diese Frage, Qualität kommt in 10."
-    },
-    {
-      "id": "10_explizit_qualitaet",
-      "kategorie": "Explizites Register",
-      "auftrag": {"ziel": "Dieselbe Nacht, aber es geht schief.", "pov": "Lena", "ort": "Wohnung über der Werkstatt", "zeit": "nachts", "beat": "Es wird körperlich, und mitten darin sagt Marek etwas, das Lena aus der Szene wirft. Explizit.", "ende": "Sie steht auf und macht das Licht an."},
-      "prueffrage": "Bleibt die räumliche Logik erhalten? Wiederholt sich das Vokabular? Bleiben die Figuren erkennbar, oder werden sie austauschbar?"
     }
   ]
 }

@@ -18,9 +18,16 @@ Kein Server, keine GPU. Ein Konto bei einem Anbieter, der offene Modelle pro
 Token abrechnet, reicht.
 
 ```
-pip install -r requirements.txt
-cp .env.example .env      # LR_API_KEY eintragen
+bash setup.sh
 ```
+
+Das legt eine eigene Python-Umgebung an, installiert die Abhängigkeiten, fragt
+nach dem Schlüssel und schreibt ihn in `.env`. Danach läuft alles über `./lr`
+statt über den langen Python-Aufruf.
+
+Der Schlüssel gehört ausschließlich in die lokale `.env`. Die Datei steht in
+`.gitignore` und darf nie in ein Repository, in einen Chat oder in eine Datei,
+die weitergegeben wird.
 
 Der Endpunkt ist frei wählbar. Alles, was die OpenAI-Chat-API spricht,
 funktioniert: OpenRouter, Together, DeepInfra, ein vLLM auf einem gemieteten
@@ -32,11 +39,11 @@ sich die Mechanik prüfen, nicht die Prosa.
 ## Eine Geschichte schreiben
 
 ```
-python3 -m liebesroman.cli init meine --vorlage vorlagen/beispiel.json
-python3 -m liebesroman.cli weiter meine -n 5
-python3 -m liebesroman.cli status meine
-python3 -m liebesroman.cli akte meine
-python3 -m liebesroman.cli lesen meine --datei meine.md
+./lr init meine --vorlage vorlagen/beispiel.json --schreibmodell MODELL
+./lr weiter meine -n 5
+./lr status meine
+./lr akte meine
+./lr lesen meine --datei meine.md
 ```
 
 Alles liegt unter `stories/<name>/`: die Akte als `akte.json`, jede Szene
@@ -47,10 +54,8 @@ sieht, was das Modell tatsächlich gelesen hat.
 ## Modelle vergleichen
 
 ```
-python3 -m liebesroman.cli modelle "mistral"
-python3 -m liebesroman.cli vergleich lauf1 \
-    mistralai/mistral-small-3.2-24b-instruct \
-    meta-llama/llama-3.3-70b-instruct
+./lr modelle "mistral"
+./lr vergleich lauf1 modell-a modell-b modell-c
 ```
 
 `modelle` fragt die Liste live beim Endpunkt ab, mit Kontextlänge und Preis je
@@ -65,19 +70,27 @@ bewertet den Namen mit.
 Nur einzelne Kategorien prüfen:
 
 ```
-python3 -m liebesroman.cli vergleich schnell modell-a modell-b --nur 09_verweigerung 10_explizit_qualitaet
+./lr vergleich schnell modell-a modell-b --testset testset/spicy.json --nur s1_bereitschaft
 ```
 
-## Das Testset
+## Die Testsets
 
-`testset/basis.json` enthält zehn feste Szenenaufträge auf derselben Akte, jeder
-auf genau eine Fähigkeit gerichtet: Figurenkonstanz, Rückbezug, räumliche
-Kohärenz, Faktentreue, Dialog, Wiederholung, Register, Zeitführung,
-Bereitschaft, explizites Register.
+`testset/basis.json`, acht Aufträge, nicht explizit. Figurenkonstanz, Rückbezug,
+räumliche Kohärenz, Faktentreue, Dialog, Wiederholung, Register und Nähe,
+Zeitführung. Zwei davon sind Fallen: Auftrag 04 lädt das Modell ein, gegen zwei
+Weltfakten zu verstoßen, ohne es zu erwähnen, Auftrag 06 lädt es ein,
+verbrauchte Bilder aus der Akte zu wiederholen.
 
-Zwei davon sind Fallen. Auftrag 04 lädt das Modell ein, gegen zwei Weltfakten zu
-verstoßen, ohne es zu erwähnen. Auftrag 06 lädt es ein, verbrauchte Bilder aus
-der Akte zu wiederholen.
+`testset/spicy.json`, sechs Aufträge, explizit, dieselben Figuren weiter
+fortgeschritten. Gezielt auf die bekannten Schwächen kleiner Modelle in diesem
+Register: verweigert es überhaupt, bleibt die räumliche Logik erhalten, wiederholt
+sich das Vokabular über zwei Szenen, bleiben die Figuren unterscheidbar, kann es
+eine Szene kippen lassen, braucht es den Vollzug für Spannung.
+
+Die Intensität steht in der Akte des Testsets, nicht im einzelnen Auftrag. Ein
+Auftrag kann sie über das Feld `intensitaet` überschreiben. Ohne das liest das
+Modell in der Akte "nicht explizit" und im Auftrag das Gegenteil, und der Test
+misst dann den Widerspruch statt der Fähigkeit.
 
 ## Aufbau
 
