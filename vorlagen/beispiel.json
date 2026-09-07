@@ -1,0 +1,39 @@
+{
+  "praemisse": "Lena hat die Tischlerei ihres Vaters übernommen und will sie eigentlich verkaufen. Marek ist der Gutachter, den die Bank schickt.",
+  "setting": "Kleinstadt im Ruhrgebiet, später Herbst",
+  "tropes": ["slow burn", "forced proximity", "sie hat etwas zu verlieren"],
+  "intensitaet": "romantisch, nicht explizit",
+  "wunschtext": "Wenig Innenmonolog, viel Dialog. Keine Erlösung durch Zufall.",
+  "leserin": "",
+  "figuren": [
+    {
+      "name": "Lena Vosskamp",
+      "alter": "34",
+      "beruf": "Tischlerin, führt den Betrieb seit dem Tod ihres Vaters",
+      "aussehen": "groß, kurze dunkle Haare, eine Narbe am linken Daumen",
+      "duktus": "knapp, stellt Gegenfragen statt zu antworten",
+      "wunsch": "aus der Verantwortung raus, ohne den Betrieb zu verraten",
+      "geheimnis": "sie hat den letzten Großauftrag selbst abgesagt"
+    },
+    {
+      "name": "Marek Sobota",
+      "alter": "40",
+      "beruf": "Gutachter im Auftrag der Sparkasse",
+      "aussehen": "schmal, immer einen Kragen zu ordentlich",
+      "duktus": "höflich, weicht aus, wenn es persönlich wird",
+      "wunsch": "diesen Auftrag sauber zu Ende bringen",
+      "geheimnis": "er kannte Lenas Vater"
+    }
+  ],
+  "beziehungen": [
+    {"von": "Marek", "zu": "Lena", "art": "beruflich, mit Interessenkonflikt", "spannung": "er darf nicht sagen, was er weiß"}
+  ],
+  "weltfakten": [
+    "Die Tischlerei liegt an der Bahnstraße, Werkstatt unten, Wohnung oben.",
+    "Lenas Vater ist im Februar gestorben.",
+    "Die Bandsäge schneidet seit März einen halben Millimeter schief."
+  ],
+  "offene_faeden": [
+    {"beschreibung": "Warum hat Marek den Auftrag angenommen, obwohl er Lenas Vater kannte?"}
+  ]
+}
