@@ -73,6 +73,25 @@ Nur einzelne Kategorien prüfen:
 ./lr vergleich schnell modell-a modell-b --testset testset/spicy.json --nur s1_bereitschaft
 ```
 
+## Leseprobe für Testleserinnen
+
+Die handwerkliche Auswahl trifft man selbst, die Qualitätsentscheidung nicht.
+Dafür baut `lesepaket` aus einem Lauf eine eigenständige HTML-Datei, die man
+verschicken kann:
+
+```
+./lr vergleich probe modell-a modell-b modell-c --testset testset/leseprobe.json
+./lr lesepaket probe modell-a modell-b modell-c
+```
+
+Die Datei enthält nur die Prosa, keine Modellnamen, keine Kennzahlen und keine
+Auftragsbeschreibung. Die Zuordnung wird für das Paket neu gemischt, damit die
+eigene Vorsortierung nicht durchschlägt, und liegt in einer Schlüsseldatei, die
+nicht mitgeschickt wird.
+
+Die Seite läuft ohne Internet und ohne Server. Eingaben bleiben im Browser der
+Leserin, am Ende erzeugt ein Knopf einen Text zum Zurückschicken.
+
 ## Die Testsets
 
 `testset/basis.json`, acht Aufträge, nicht explizit. Figurenkonstanz, Rückbezug,
@@ -86,6 +105,11 @@ fortgeschritten. Gezielt auf die bekannten Schwächen kleiner Modelle in diesem
 Register: verweigert es überhaupt, bleibt die räumliche Logik erhalten, wiederholt
 sich das Vokabular über zwei Szenen, bleiben die Figuren unterscheidbar, kann es
 eine Szene kippen lassen, braucht es den Vollzug für Spannung.
+
+`testset/leseprobe.json`, drei Szenen in drei Tonlagen: romantisch, angedeutet,
+explizit. Nicht zur Fehlersuche, sondern als Leseprobe für Testleserinnen.
+Deshalb drei verschiedene Szenen statt derselben dreimal, damit es sich lesen
+lässt.
 
 Die Intensität steht in der Akte des Testsets, nicht im einzelnen Auftrag. Ein
 Auftrag kann sie über das Feld `intensitaet` überschreiben. Ohne das liest das
@@ -101,6 +125,7 @@ misst dann den Widerspruch statt der Fähigkeit.
 - `pipeline.py` — die Schleife: planen, schreiben, prüfen, Akte fortschreiben.
   Bei harten Widersprüchen wird die Szene mit der Fehlerliste neu erzeugt.
 - `vergleich.py` — Testset über mehrere Modelle, blind abgelegt.
+- `lesepaket.py` — erzeugt aus einem Lauf eine verschickbare Leseprobe.
 - `llm.py` — Endpunkt-Client. Entfernt Sampler-Parameter, die ein Endpunkt nicht
   kennt, statt daran zu scheitern.
 

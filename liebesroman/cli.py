@@ -12,6 +12,7 @@ from .config import Config
 from .llm import Client, LLMFehler, MockClient
 from .pipeline import Geschichte
 from . import vergleich as vgl
+from . import lesepaket as lp
 
 WURZEL = Path(__file__).resolve().parent.parent
 STORIES = WURZEL / "stories"
@@ -165,6 +166,29 @@ def cmd_vergleich(args) -> int:
     return 0
 
 
+
+def cmd_lesepaket(args) -> int:
+    lauf = WURZEL / "vergleiche" / args.lauf
+    if not (lauf / "rohdaten.json").exists():
+        print(f"Kein Lauf unter vergleiche/{args.lauf}. Erst 'vergleich' starten.")
+        return 1
+    testset = Path(args.testset)
+    if not testset.exists():
+        testset = WURZEL / args.testset
+    if not testset.exists():
+        print(f"Testset nicht gefunden: {args.testset}")
+        return 1
+
+    ziel = Path(args.datei) if args.datei else lauf / "leseprobe.html"
+    seite, schluessel = lp.bauen(lauf, testset, args.modelle, ziel, titel=args.titel)
+    print(f"Leseprobe: {seite}")
+    print(f"Schlüssel: {schluessel}  (nicht mitschicken)")
+    print()
+    print("Die HTML-Datei ist eigenständig und braucht kein Internet. Verschicken")
+    print("per Mail oder AirDrop, im Browser öffnen, lesen, am Ende auf den Knopf.")
+    return 0
+
+
 def main(argv=None) -> int:
     _env_laden()
     p = argparse.ArgumentParser(prog="liebesroman", description=__doc__)
@@ -212,6 +236,14 @@ def main(argv=None) -> int:
     s.add_argument("--testset", default="testset/basis.json")
     s.add_argument("--nur", nargs="*", help="nur diese Auftrags-IDs oder Kategorien")
     s.set_defaults(func=cmd_vergleich)
+
+    s = sub.add_parser("lesepaket", help="Leseprobe für Testleserinnen aus einem Lauf bauen")
+    s.add_argument("lauf", help="Name eines Laufs unter vergleiche/")
+    s.add_argument("modelle", nargs="+", help="die Modelle, die ins Paket sollen")
+    s.add_argument("--testset", default="testset/leseprobe.json")
+    s.add_argument("--datei", help="Zieldatei, sonst vergleiche/<lauf>/leseprobe.html")
+    s.add_argument("--titel", default="Leseprobe")
+    s.set_defaults(func=cmd_lesepaket)
 
     args = p.parse_args(argv)
     return args.func(args)
