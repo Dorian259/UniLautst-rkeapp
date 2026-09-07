@@ -235,11 +235,14 @@ def _prosa_und_protokoll(rohtext: str) -> tuple[str, dict]:
 
 
 def _banliste_treffer(text: str, verbotene: list[str]) -> list[str]:
-    klein = text.lower()
+    from .sieben import normal
+
+    klein = normal(text)
     treffer = []
     for v in verbotene:
-        # Toleriert Beugung am Wortende, aber keine Teilwort-Zufallstreffer.
-        muster = re.escape(v.lower()).replace(r"\ ", r"\s+")
+        # Toleriert Zeilenumbrueche innerhalb der Wendung, aber keine
+        # Teilwort-Zufallstreffer.
+        muster = re.escape(normal(v)).replace(r"\ ", r"\s+")
         if re.search(muster, klein):
             treffer.append(v)
     return treffer

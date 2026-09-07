@@ -73,6 +73,29 @@ Nur einzelne Kategorien prüfen:
 ./lr vergleich schnell modell-a modell-b --testset testset/spicy.json --nur s1_bereitschaft
 ```
 
+## Grobsieb
+
+Das meiste an der handwerklichen Vorauswahl ist zählbar, und was zählbar ist,
+muss niemand lesen:
+
+```
+./lr sieben lauf1 --testset testset/spicy.json
+```
+
+Geprüft wird pro Modell: Verweigerung und Abblenden über Formulierungslisten,
+abgebrochene Antworten, Treffer auf der Banliste, Kreisen um dieselben Wörter,
+Wiederholung zwischen je zwei Szenen desselben Modells über die Überlappung der
+Dreiwortfolgen, und die Weltfakten des Testsets über Stichwörter aus
+`pruefregeln`.
+
+Die Ausgabe ist ein Hinweisgeber, kein Urteil. `hart` heißt durchgefallen,
+`weich` heißt nachsehen, `prüfen` heißt Stichworttreffer, der auch ein
+Fehlalarm sein kann. Ein Stichwortabgleich erzeugt zwangsläufig Fehlalarme, und
+ein stiller Fehlalarm wäre schlimmer als ein lauter.
+
+Der Abgleich normalisiert Umlaute auf beiden Seiten. Ein Modell, das
+"naechsten" statt "nächsten" schreibt, fiele sonst durch jedes Muster.
+
 ## Leseprobe für Testleserinnen
 
 Die handwerkliche Auswahl trifft man selbst, die Qualitätsentscheidung nicht.
@@ -125,6 +148,7 @@ misst dann den Widerspruch statt der Fähigkeit.
 - `pipeline.py` — die Schleife: planen, schreiben, prüfen, Akte fortschreiben.
   Bei harten Widersprüchen wird die Szene mit der Fehlerliste neu erzeugt.
 - `vergleich.py` — Testset über mehrere Modelle, blind abgelegt.
+- `sieben.py` — automatische Vorauswertung eines Laufs.
 - `lesepaket.py` — erzeugt aus einem Lauf eine verschickbare Leseprobe.
 - `llm.py` — Endpunkt-Client. Entfernt Sampler-Parameter, die ein Endpunkt nicht
   kennt, statt daran zu scheitern.

@@ -13,6 +13,7 @@ from .llm import Client, LLMFehler, MockClient
 from .pipeline import Geschichte
 from . import vergleich as vgl
 from . import lesepaket as lp
+from . import sieben as sb
 
 WURZEL = Path(__file__).resolve().parent.parent
 STORIES = WURZEL / "stories"
@@ -189,6 +190,30 @@ def cmd_lesepaket(args) -> int:
     return 0
 
 
+
+def cmd_sieben(args) -> int:
+    lauf = WURZEL / "vergleiche" / args.lauf
+    if not (lauf / "rohdaten.json").exists():
+        print(f"Kein Lauf unter vergleiche/{args.lauf}. Erst 'vergleich' starten.")
+        return 1
+    testset = Path(args.testset)
+    if not testset.exists():
+        testset = WURZEL / args.testset
+    if not testset.exists():
+        print(f"Testset nicht gefunden: {args.testset}")
+        return 1
+
+    ergebnis = sb.auswerten(lauf, testset)
+    text = sb.bericht(ergebnis)
+    print(text)
+    (lauf / "grobsieb.txt").write_text(text, encoding="utf-8")
+    (lauf / "grobsieb.json").write_text(
+        json.dumps(ergebnis, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    print(f"Auch gespeichert unter {lauf / 'grobsieb.txt'}")
+    return 0
+
+
 def main(argv=None) -> int:
     _env_laden()
     p = argparse.ArgumentParser(prog="liebesroman", description=__doc__)
@@ -244,6 +269,11 @@ def main(argv=None) -> int:
     s.add_argument("--datei", help="Zieldatei, sonst vergleiche/<lauf>/leseprobe.html")
     s.add_argument("--titel", default="Leseprobe")
     s.set_defaults(func=cmd_lesepaket)
+
+    s = sub.add_parser("sieben", help="einen Lauf automatisch vorauswerten")
+    s.add_argument("lauf", help="Name eines Laufs unter vergleiche/")
+    s.add_argument("--testset", default="testset/spicy.json")
+    s.set_defaults(func=cmd_sieben)
 
     args = p.parse_args(argv)
     return args.func(args)

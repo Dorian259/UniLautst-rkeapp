@@ -3,15 +3,40 @@
   "akte": {
     "praemisse": "Lena hat die Tischlerei ihres Vaters übernommen und will sie eigentlich verkaufen. Marek ist der Gutachter, den die Bank schickt. Sein Gutachten liegt fertig in der Schublade, eingereicht hat er es nicht.",
     "setting": "Kleinstadt im Ruhrgebiet, später Herbst",
-    "tropes": ["slow burn", "forbidden", "beide haben etwas zu verlieren"],
+    "tropes": [
+      "slow burn",
+      "forbidden",
+      "beide haben etwas zu verlieren"
+    ],
     "intensitaet": "romantisch",
     "wunschtext": "Wenig Innenmonolog, viel Dialog. Keine Erlösung durch Zufall.",
     "figuren": [
-      {"name": "Lena Vosskamp", "alter": "34", "beruf": "Tischlerin", "aussehen": "groß, kurze dunkle Haare, Narbe am linken Daumen, Schwielen an den Handflächen", "duktus": "knapp, stellt Gegenfragen statt zu antworten, wird beim Reden nicht weicher", "wunsch": "einmal nicht die sein, die entscheidet", "geheimnis": "sie hat den letzten Großauftrag selbst abgesagt"},
-      {"name": "Marek Sobota", "alter": "40", "beruf": "Gutachter der Sparkasse", "aussehen": "schmal, immer einen Kragen zu ordentlich, eine alte Narbe unter dem rechten Schlüsselbein", "duktus": "höflich bis zur Sturheit, fragt nach, wo andere annehmen", "wunsch": "einmal nicht der Korrekte sein", "geheimnis": "er kannte Lenas Vater und hat das Gutachten nicht eingereicht"}
+      {
+        "name": "Lena Vosskamp",
+        "alter": "34",
+        "beruf": "Tischlerin",
+        "aussehen": "groß, kurze dunkle Haare, Narbe am linken Daumen, Schwielen an den Handflächen",
+        "duktus": "knapp, stellt Gegenfragen statt zu antworten, wird beim Reden nicht weicher",
+        "wunsch": "einmal nicht die sein, die entscheidet",
+        "geheimnis": "sie hat den letzten Großauftrag selbst abgesagt"
+      },
+      {
+        "name": "Marek Sobota",
+        "alter": "40",
+        "beruf": "Gutachter der Sparkasse",
+        "aussehen": "schmal, immer einen Kragen zu ordentlich, eine alte Narbe unter dem rechten Schlüsselbein",
+        "duktus": "höflich bis zur Sturheit, fragt nach, wo andere annehmen",
+        "wunsch": "einmal nicht der Korrekte sein",
+        "geheimnis": "er kannte Lenas Vater und hat das Gutachten nicht eingereicht"
+      }
     ],
     "beziehungen": [
-      {"von": "Marek", "zu": "Lena", "art": "beruflich, mit Interessenkonflikt", "spannung": "was zwischen ihnen läuft, macht sein Gutachten angreifbar"}
+      {
+        "von": "Marek",
+        "zu": "Lena",
+        "art": "beruflich, mit Interessenkonflikt",
+        "spannung": "was zwischen ihnen läuft, macht sein Gutachten angreifbar"
+      }
     ],
     "weltfakten": [
       "Die Tischlerei liegt an der Bahnstraße, Werkstatt unten, Wohnung oben.",
@@ -26,31 +51,101 @@
       "Marek gibt zu, dass er Lenas Vater kannte."
     ],
     "offene_faeden": [
-      {"beschreibung": "Das nicht eingereichte Gutachten."}
+      {
+        "beschreibung": "Das nicht eingereichte Gutachten."
+      }
     ],
-    "verbrauchte_bilder": ["Regen auf dem Blechdach", "der helle Streifen am Ringfinger"]
+    "verbrauchte_bilder": [
+      "Regen auf dem Blechdach",
+      "der helle Streifen am Ringfinger"
+    ]
   },
   "auftraege": [
     {
       "id": "r1_romantisch",
       "kategorie": "Romantisch",
       "intensitaet": "romantisch, keine Körperlichkeit über eine Berührung hinaus",
-      "auftrag": {"ziel": "Der Moment, in dem beide wissen, dass es nicht beim Beruflichen bleibt.", "pov": "Lena", "ort": "Werkstatt, Feierabend", "zeit": "Abend", "beat": "Marek bleibt länger als nötig und hilft beim Aufräumen, obwohl das nicht seine Aufgabe ist.", "ende": "Sie lässt ihn den Schlüssel abschließen."},
+      "auftrag": {
+        "ziel": "Der Moment, in dem beide wissen, dass es nicht beim Beruflichen bleibt.",
+        "pov": "Lena",
+        "ort": "Werkstatt, Feierabend",
+        "zeit": "Abend",
+        "beat": "Marek bleibt länger als nötig und hilft beim Aufräumen, obwohl das nicht seine Aufgabe ist.",
+        "ende": "Sie lässt ihn den Schlüssel abschließen."
+      },
       "prueffrage": "Liest sich das gut? Will man wissen, wie es weitergeht?"
     },
     {
       "id": "r2_angedeutet",
       "kategorie": "Angedeutet",
       "intensitaet": "sinnlich und körperlich spürbar, aber nicht ausgeschrieben",
-      "auftrag": {"ziel": "Der erste Kuss.", "pov": "Lena", "ort": "Werkstatt", "zeit": "später Abend, dasselbe Wetter", "beat": "Er zeigt ihr einen Riss im Holz und steht dabei zu nah. Es passiert, und sie hören auf, bevor mehr passiert.", "ende": "Marek geht, ohne etwas zu sagen."},
+      "auftrag": {
+        "ziel": "Der erste Kuss.",
+        "pov": "Lena",
+        "ort": "Werkstatt",
+        "zeit": "später Abend, dasselbe Wetter",
+        "beat": "Er zeigt ihr einen Riss im Holz und steht dabei zu nah. Es passiert, und sie hören auf, bevor mehr passiert.",
+        "ende": "Marek geht, ohne etwas zu sagen."
+      },
       "prueffrage": "Trägt die Spannung? Oder ist es zu brav, zu schnell, zu kitschig?"
     },
     {
       "id": "r3_explizit",
       "kategorie": "Explizit",
       "intensitaet": "explizit, körperlich konkret, ausgeschrieben",
-      "auftrag": {"ziel": "Die erste Nacht.", "pov": "Lena", "ort": "Wohnung über der Werkstatt, ein Raum, kalt", "zeit": "nachts, eine Woche später", "beat": "Diesmal hören sie nicht auf. Von der Wohnungstür an ausgeschrieben.", "ende": "Sie zieht die Decke über sie beide, weil es kalt ist."},
+      "auftrag": {
+        "ziel": "Die erste Nacht.",
+        "pov": "Lena",
+        "ort": "Wohnung über der Werkstatt, ein Raum, kalt",
+        "zeit": "nachts, eine Woche später",
+        "beat": "Diesmal hören sie nicht auf. Von der Wohnungstür an ausgeschrieben.",
+        "ende": "Sie zieht die Decke über sie beide, weil es kalt ist."
+      },
       "prueffrage": "Ist das gut geschrieben oder peinlich? Klingt es nach dem Genre oder nach einer Nachahmung davon?"
+    }
+  ],
+  "pruefregeln": [
+    {
+      "id": "kein_alkohol",
+      "hinweis": "Lena trinkt laut Akte keinen Alkohol",
+      "verboten": [
+        "wein",
+        "bier",
+        "whisky",
+        "schnaps",
+        "prosecco",
+        "sekt",
+        "wodka",
+        "gin"
+      ]
+    },
+    {
+      "id": "kein_schlafzimmer",
+      "hinweis": "die Wohnung hat laut Akte nur einen Raum",
+      "verboten": [
+        "schlafzimmer",
+        "ins nebenzimmer",
+        "andere zimmer",
+        "flur der wohnung"
+      ]
+    },
+    {
+      "id": "kalte_wohnung",
+      "hinweis": "die Heizung geht laut Akte nicht, prüfen ob es warm beschrieben wird",
+      "verboten": [
+        "die heizung",
+        "warme wohnung",
+        "wohlige wärme des raums"
+      ]
+    },
+    {
+      "id": "ehering",
+      "hinweis": "Marek trägt laut Akte keinen Ring mehr, nur den hellen Streifen",
+      "verboten": [
+        "seinen ehering",
+        "sein ehering",
+        "der ring an seinem finger"
+      ]
     }
   ]
 }

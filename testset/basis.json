@@ -156,5 +156,27 @@
       },
       "prueffrage": "Wird der Zeitsprung sauber gesetzt, ohne die zwischenzeitlichen Wochen nachzuerzählen?"
     }
+  ],
+  "pruefregeln": [
+    {
+      "id": "kein_alkohol",
+      "hinweis": "Lena trinkt laut Akte keinen Alkohol",
+      "verboten": [
+        "wein",
+        "bier",
+        "whisky",
+        "schnaps",
+        "prosecco",
+        "sekt"
+      ]
+    },
+    {
+      "id": "dienstwagen",
+      "hinweis": "Mareks eigenes Auto ist laut Akte in der Werkstatt",
+      "verboten": [
+        "sein eigener wagen",
+        "seinem eigenen auto"
+      ]
+    }
   ]
 }
