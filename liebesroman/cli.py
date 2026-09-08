@@ -19,6 +19,20 @@ WURZEL = Path(__file__).resolve().parent.parent
 STORIES = WURZEL / "stories"
 
 
+def _ausgabe_utf8() -> None:
+    """Erzwingt UTF-8 auf der Konsole.
+
+    Die Windows-Eingabeaufforderung läuft je nach Einstellung mit einer
+    Codepage, die keine Umlaute kann. Jede Ausgabe würde dann mit einem
+    UnicodeEncodeError abbrechen, mitten im Lauf.
+    """
+    for strom in (sys.stdout, sys.stderr):
+        try:
+            strom.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError):
+            pass
+
+
 def _env_laden() -> None:
     """Liest eine .env im Projektwurzelverzeichnis, ohne Zusatzabhängigkeit."""
     import os
@@ -26,7 +40,9 @@ def _env_laden() -> None:
     p = WURZEL / ".env"
     if not p.exists():
         return
-    for zeile in p.read_text(encoding="utf-8").splitlines():
+    # utf-8-sig, weil der Windows-Editor eine Stückliste voranstellt und der
+    # erste Variablenname sonst unlesbar wird.
+    for zeile in p.read_text(encoding="utf-8-sig").splitlines():
         zeile = zeile.strip()
         if not zeile or zeile.startswith("#") or "=" not in zeile:
             continue
@@ -215,6 +231,7 @@ def cmd_sieben(args) -> int:
 
 
 def main(argv=None) -> int:
+    _ausgabe_utf8()
     _env_laden()
     p = argparse.ArgumentParser(prog="liebesroman", description=__doc__)
     p.add_argument("--provider", choices=["api", "mock"], default="api",

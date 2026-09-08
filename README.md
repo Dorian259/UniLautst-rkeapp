@@ -17,13 +17,23 @@ braucht es keine Oberfläche. Alles Weitere baut auf dieser Antwort auf.
 Kein Server, keine GPU. Ein Konto bei einem Anbieter, der offene Modelle pro
 Token abrechnet, reicht.
 
+macOS und Linux:
+
 ```
 bash setup.sh
 ```
 
+Windows, in PowerShell:
+
+```
+powershell -ExecutionPolicy Bypass -File setup.ps1
+```
+
 Das legt eine eigene Python-Umgebung an, installiert die Abhängigkeiten, fragt
 nach dem Schlüssel und schreibt ihn in `.env`. Danach läuft alles über `./lr`
-statt über den langen Python-Aufruf.
+beziehungsweise `lr` unter Windows, statt über den langen Python-Aufruf. In den
+Beispielen unten steht `./lr`; unter Windows entfällt der Punkt und der
+Schrägstrich.
 
 Der Schlüssel gehört ausschließlich in die lokale `.env`. Die Datei steht in
 `.gitignore` und darf nie in ein Repository, in einen Chat oder in eine Datei,

@@ -2,6 +2,8 @@ __pycache__/
 *.pyc
 .env
 .venv/
+lr
+lr.cmd
 stories/*/
 !stories/.gitkeep
 vergleiche/*/
